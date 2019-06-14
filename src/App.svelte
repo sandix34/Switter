@@ -17,16 +17,21 @@
   h1 {
     color: purple;
   }
+
+  .author {
+    font-weight: bold;
+    padding-bottom: 1em;
+  }
 </style>
 
 <h1>{name}</h1>
 
-<Message author="Bob" on:message={ addMessage } />
+<Message on:message={ addMessage } />
 
 <div>
   <h2>Messages</h2>
   { #each messages as message }
-    <div>By { message.author }</div>
+    <div class="author">By { message.author }</div>
     <div>{ message.text }</div>
     <hr>
   { /each }

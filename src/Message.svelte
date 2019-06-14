@@ -6,7 +6,7 @@
 
 
   let message = "";
-  export let author;
+  let author = "";
 
   function saveMessage() {
     const newMessage = {
@@ -18,11 +18,14 @@
     console.log("newMessage", newMessage);
     dispatch('message', newMessage);
     message = "";
+    author = "";
   }
 </script>
 
 <style></style>
 
+<input type="text" bind:value={ author }>
+<br>
 <textarea cols="50" rows="5" bind:value={ message } />
 <br>
 <button on:click={ saveMessage }>send</button>
