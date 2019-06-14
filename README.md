@@ -9,7 +9,9 @@
 - créer des custom event
 - passer des props
 
+![switter](https://user-images.githubusercontent.com/44428775/59509354-17227300-8eb1-11e9-93b9-96a960d5441c.gif)
 
+---
 
 *Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
