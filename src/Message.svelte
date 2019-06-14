@@ -15,7 +15,7 @@
     const newMessage = {
       id: Date.now(),
       text: message,
-      author: author,
+      author: author || 'anonymous',
       date: new Date()
     };
     
