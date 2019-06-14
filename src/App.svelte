@@ -4,6 +4,7 @@
   export let name;
   
   let messages = [];
+  let isVisible = false;
 
   const addMessage = (event) => {
     console.log(event.detail);
@@ -24,6 +25,10 @@
   };
 
   const formatter = new Intl.DateTimeFormat("fr-FR", options);
+
+  const toggle = () => {
+    isVisible = !isVisible
+  }
   
 </script>
 
@@ -39,9 +44,11 @@
 </style>
 
 <h1>{name}</h1>
-
+<button on:click={ toggle }>{ isVisible ? 'hide' : 'show' }</button>
+<br>
+{ #if isVisible }
 <Message on:message={ addMessage } />
-
+{ /if }
 <div>
   <h2>Messages</h2>
   { #each messages as message }
