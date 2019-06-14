@@ -1,4 +1,10 @@
 <script>
+
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+
   let message = "";
   export let author;
 
@@ -8,8 +14,9 @@
       text: message,
       author: author
     };
-    //messages = [newMessage, ...messages];
+    
     console.log("newMessage", newMessage);
+    dispatch('message', newMessage);
     message = "";
   }
 </script>

@@ -4,6 +4,12 @@
   export let name;
   
   let messages = [];
+
+  const addMessage = (event) => {
+    console.log(event.detail);
+    messages = [event.detail, ...messages];
+    
+  }
   
 </script>
 
@@ -15,7 +21,7 @@
 
 <h1>{name}</h1>
 
-<Message author="Bob" />
+<Message author="Bob" on:message={ addMessage } />
 
 <div>
   <h2>Messages</h2>
