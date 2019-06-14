@@ -15,7 +15,7 @@
 
 <h1>{name}</h1>
 
-<Message/>
+<Message author="Bob" />
 
 <div>
   <h2>Messages</h2>

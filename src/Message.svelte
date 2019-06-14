@@ -1,11 +1,12 @@
 <script>
   let message = "";
+  export let author;
 
   function saveMessage() {
     const newMessage = {
       id: Date.now(),
       text: message,
-      author: "Sandrine"
+      author: author
     };
     //messages = [newMessage, ...messages];
     console.log("newMessage", newMessage);
