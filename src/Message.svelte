@@ -7,8 +7,9 @@
 
   let message = "";
   let author = "";
+  let maxLength = 24;
   $: nbCaracters = message.length;
-  $: disabled = message.length > 12 ? true : false;
+  $: disabled = message.length > maxLength ? true : false;
 
   function saveMessage() {
     const newMessage = {
@@ -29,10 +30,14 @@
     .text {
         width: 529px;
     }
+    .alert{
+        color: orangered;
+    }
 </style>
 
 <input class="text" type="text" bind:value={ author }>
 <br>
 <textarea cols="50" rows="5" bind:value={ message } />
 <br>
-<button on:click={ saveMessage } disabled={ disabled }>send</button><span>{ nbCaracters }</span>
+<button on:click={ saveMessage } disabled={ disabled }>send</button>
+<span class:alert={ nbCaracters > maxLength  }>{ nbCaracters }</span>
