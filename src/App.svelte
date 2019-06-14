@@ -1,24 +1,10 @@
 <script>
+  import Message from './Message.svelte'
+
   export let name;
-  let message = "";
+  
   let messages = [];
-
-  //function updateMessage(event) {
-	//console.log(event.target.value);
-	//message = event.target.value;
-  //}
-
-  function saveMessage() {
-    const newMessage= {
-      id: Date.now(),
-      text: message,
-      author: 'Sandrine'
-    };
-    messages = [newMessage, ...messages]
-    console.log('messages', messages );
-    message = "";
-    
-  }
+  
 </script>
 
 <style>
@@ -28,13 +14,9 @@
 </style>
 
 <h1>{name}</h1>
-<textarea cols="50" rows="5" bind:value={ message } />
-<br>
-<button on:click={ saveMessage }>send</button>
-<div>
-	<h3>Preview</h3>
-	{message}
-</div>
+
+<Message/>
+
 <div>
   <h2>Messages</h2>
   { #each messages as message }
