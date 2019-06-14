@@ -7,6 +7,8 @@
 
   let message = "";
   let author = "";
+  $: nbCaracters = message.length;
+  $: disabled = message.length > 12 ? true : false;
 
   function saveMessage() {
     const newMessage = {
@@ -33,4 +35,4 @@
 <br>
 <textarea cols="50" rows="5" bind:value={ message } />
 <br>
-<button on:click={ saveMessage }>send</button>
+<button on:click={ saveMessage } disabled={ disabled }>send</button><span>{ nbCaracters }</span>
