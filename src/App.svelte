@@ -16,6 +16,7 @@
     };
     messages = [newMessage, ...messages]
     console.log('messages', messages );
+    message = "";
     
   }
 </script>
