@@ -10,6 +10,20 @@
     messages = [event.detail, ...messages];
     
   }
+
+  // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/DateTimeFormat
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour12: true,
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit"
+  };
+
+  const formatter = new Intl.DateTimeFormat("fr-FR", options);
   
 </script>
 
@@ -31,7 +45,7 @@
 <div>
   <h2>Messages</h2>
   { #each messages as message }
-    <div class="author">By { message.author }</div>
+    <div class="author">Par { message.author } le { formatter.format(message.date) }</div>
     <div>{ message.text }</div>
     <hr>
   { /each }

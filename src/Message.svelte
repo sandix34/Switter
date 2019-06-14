@@ -12,7 +12,8 @@
     const newMessage = {
       id: Date.now(),
       text: message,
-      author: author
+      author: author,
+      date: new Date()
     };
     
     console.log("newMessage", newMessage);
@@ -22,9 +23,13 @@
   }
 </script>
 
-<style></style>
+<style>
+    .text {
+        width: 529px;
+    }
+</style>
 
-<input type="text" bind:value={ author }>
+<input class="text" type="text" bind:value={ author }>
 <br>
 <textarea cols="50" rows="5" bind:value={ message } />
 <br>
